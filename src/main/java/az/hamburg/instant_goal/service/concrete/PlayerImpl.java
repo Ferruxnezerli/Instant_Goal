@@ -3,7 +3,6 @@ package az.hamburg.instant_goal.service.concrete;
 import az.hamburg.instant_goal.dto.request.PlayerRequest;
 import az.hamburg.instant_goal.dto.response.PlayerResponse;
 import az.hamburg.instant_goal.entity.CountryEntity;
-import az.hamburg.instant_goal.entity.NationalTeamEntity;
 import az.hamburg.instant_goal.entity.PlayerEntity;
 import az.hamburg.instant_goal.entity.TeamEntity;
 import az.hamburg.instant_goal.exception.NotFoundException;
@@ -31,7 +30,6 @@ public class PlayerImpl implements PlayerService {
     PlayerRepository playerRepository;
     TeamRepository teamRepository;
     CountryRepository countryRepository;
-NationalTeamRepository nationalTeamRepository;
 
     @Override
     public void savePlayer(PlayerRequest request) {
@@ -40,11 +38,10 @@ NationalTeamRepository nationalTeamRepository;
                 -> new NotFoundException("Team can't found!"));
         CountryEntity countryEntity= countryRepository.findById(request.getCountry_id()).orElseThrow(()
                 -> new NotFoundException("Country can't found!"));
-        NationalTeamEntity nationalTeamEntity = nationalTeamRepository.findById(request.getNationalTeam_id())
-                .orElseThrow(() -> new NotFoundException("National team can't found!"));
 
 
-        PlayerEntity player = PLAYER_MAPPER.requestToEntity(request,teamEntity,countryEntity,nationalTeamEntity);
+
+        PlayerEntity player = PLAYER_MAPPER.requestToEntity(request,teamEntity,countryEntity);
         playerRepository.save(player);
     }
 

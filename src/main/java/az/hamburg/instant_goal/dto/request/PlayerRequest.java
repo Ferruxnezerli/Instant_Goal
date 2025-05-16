@@ -25,6 +25,5 @@ public class PlayerRequest {
     PlayerStatus status;
     Long team_id;
     Long country_id;
-    Long nationalTeam_id;
 
 }

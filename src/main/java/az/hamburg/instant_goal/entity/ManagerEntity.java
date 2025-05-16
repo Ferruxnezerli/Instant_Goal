@@ -32,7 +32,6 @@ public class ManagerEntity {
     Long id;
 
     @NotBlank(message = "This field must not be blank")
-    @Column(name = "manager_name")
     String fullName;
 
     byte age;
@@ -50,7 +49,6 @@ public class ManagerEntity {
     @JoinColumn(name = "country_id")
     CountryEntity country;
 
-    @OneToOne(mappedBy = "manager", fetch = EAGER)
-    NationalTeamEntity nationalTeam;
+
 
 }

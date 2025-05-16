@@ -1,5 +1,7 @@
 package az.hamburg.instant_goal.dto.response;
 
+import az.hamburg.instant_goal.entity.MatchEntity;
+import az.hamburg.instant_goal.entity.PlayerEntity;
 import az.hamburg.instant_goal.enums.TeamStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Enumerated;
@@ -26,5 +28,9 @@ public class TeamResponse {
     int foundYear;
     int numberOfCups;
     TeamStatus status;
+    List<MatchEntity> homeMatches;
+    List<MatchEntity> awayMatches;
+    List<PlayerEntity> players;
+
 
 }

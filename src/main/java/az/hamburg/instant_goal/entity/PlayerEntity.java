@@ -44,7 +44,6 @@ public class PlayerEntity {
     Long id;
 
     @NotBlank(message = "This field must not be blank")
-    @Column(name = "player_name")
     String name;
 
     byte age;
@@ -72,8 +71,5 @@ public class PlayerEntity {
     @OneToOne(mappedBy = "player", fetch = FetchType.EAGER)
     PlayerStatisticsEntity statistics;
 
-    @ManyToOne(fetch = EAGER)
-    @JoinColumn(name = "nationalTeam_id")
-    NationalTeamEntity nationalTeam;
 
 }

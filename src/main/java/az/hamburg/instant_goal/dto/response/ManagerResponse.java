@@ -22,5 +22,5 @@ public class ManagerResponse {
     byte age;
     int numberOfCups;
     ManagerStatus status;
-    String team_name;
+
 }

@@ -3,7 +3,6 @@ package az.hamburg.instant_goal.mapper;
 import az.hamburg.instant_goal.dto.request.PlayerRequest;
 import az.hamburg.instant_goal.dto.response.PlayerResponse;
 import az.hamburg.instant_goal.entity.CountryEntity;
-import az.hamburg.instant_goal.entity.NationalTeamEntity;
 import az.hamburg.instant_goal.entity.PlayerEntity;
 import az.hamburg.instant_goal.entity.TeamEntity;
 import az.hamburg.instant_goal.enums.PlayerStatus;
@@ -11,7 +10,7 @@ import az.hamburg.instant_goal.enums.PlayerStatus;
 public enum PlayerMapper {
     PLAYER_MAPPER;
 
-    public PlayerEntity requestToEntity(PlayerRequest request, TeamEntity team, CountryEntity country, NationalTeamEntity nationalTeam) {
+    public PlayerEntity requestToEntity(PlayerRequest request, TeamEntity team, CountryEntity country) {
         PlayerEntity build = PlayerEntity.builder()
                 .name(request.getName())
                 .age(request.getAge())
@@ -22,7 +21,6 @@ public enum PlayerMapper {
                 .status(request.getStatus())
                 .team(team)
                 .country(country)
-                .nationalTeam(nationalTeam)
                 .build();
 
         return build;

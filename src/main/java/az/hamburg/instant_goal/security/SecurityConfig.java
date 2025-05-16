@@ -20,21 +20,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-//    @Bean
-//    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
-//        UserDetails ferrux = User
-//                .withUsername("Ferrux")
-//                .password(encoder.encode("1899"))
-//                .roles("ADMIN")
-//                .build();
-//        UserDetails zaur = User
-//                .withUsername("Zaur")
-//                .password(encoder.encode("2006"))
-//                .roles("USER")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(ferrux, zaur);
-//    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

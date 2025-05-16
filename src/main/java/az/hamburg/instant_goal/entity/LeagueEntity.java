@@ -42,7 +42,6 @@ public class LeagueEntity {
     Long id;
 
     @NotBlank(message = "This field must not be blank")
-    @Column(name = "league_name")
     String name;
 
     int numberOfTeams;

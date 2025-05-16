@@ -39,13 +39,7 @@ public class CountryEntity {
     Long id;
 
     @NotBlank(message = "This field must not be blank")
-    @Column(name = "country_name")
     String name;
-
-
-    byte numberOfEuroCups;
-
-    int rankingInUEFA;
 
     int rankingInFIFA;
 

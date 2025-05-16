@@ -27,6 +27,7 @@ import static lombok.AccessLevel.PRIVATE;
 public class CountryResponse {
     Long id;
     String name;
+    int rankingInFifa;
     Continent continent;
     CountryStatus status;
     List<LeagueEntity> leagues=new ArrayList<>();
